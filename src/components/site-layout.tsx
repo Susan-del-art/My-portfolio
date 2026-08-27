@@ -140,10 +140,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="text-sm text-[var(--beige)]/75">
             <a
-              href="mailto:hello@susanwakarindi.com"
+              href="mailto:susanwakarindi222@gmail.com"
               className="block font-medium text-[var(--gold)] transition-opacity hover:opacity-80"
             >
-              hello@susanwakarindi.com
+              susanwakarindi222@gmail.com
             </a>
             <p className="mt-2">© {new Date().getFullYear()} Susan Wakarindi</p>
           </div>

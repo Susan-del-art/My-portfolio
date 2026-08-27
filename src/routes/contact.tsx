@@ -75,8 +75,8 @@ function Contact() {
           <div className="space-y-4 text-sm text-muted-foreground">
             <p className="flex items-start gap-3">
               <Mail className="mt-0.5 size-4 shrink-0 text-[var(--gold)]" />
-              <a className="hover:text-primary" href="mailto:hello@susanwakarindi.com">
-                hello@susanwakarindi.com
+              <a className="hover:text-primary" href="mailto:susanwakarindi222@gmail.com">
+                susanwakarindi222@gmail.com
               </a>
             </p>
             <p className="flex items-start gap-3">
