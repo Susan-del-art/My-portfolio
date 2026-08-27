@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
+import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { ArrowRight, Bot, CalendarCheck, Megaphone, Workflow } from "lucide-react";
 import portrait from "@/assets/susan-portrait.jpg.asset.json";
 
@@ -167,6 +168,9 @@ function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Testimonials Carousel */}
+      <TestimonialsCarousel />
 
       {/* Close */}
       <section className="mx-auto max-w-6xl px-6 py-20">

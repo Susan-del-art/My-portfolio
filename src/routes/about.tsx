@@ -120,10 +120,11 @@ function About() {
               Training &amp; credentials
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li>Certified Virtual Assistant — ALX Virtual Assistant Programme</li>
-              <li>Google Workspace &amp; project management essentials</li>
-              <li>AI tools, prompting &amp; no-code automation practice</li>
-              <li>Bookkeeping fundamentals (QuickBooks Online)</li>
+              <li>Certification, Virtual Assistant — Elvis Warutumo (2025)</li>
+              <li>Diploma, Business Management — KCA University (2023–2024)</li>
+              <li>Certificate, Business Management — KCA University (2022–2023)</li>
+              <li>Certification, Virtual Assistance — Ajira Digital (2023)</li>
+              <li>Certification, Social Media Marketing — HubSpot Academy (2023)</li>
             </ul>
           </div>
           <div>
