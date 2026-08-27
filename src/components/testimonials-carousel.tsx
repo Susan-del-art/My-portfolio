@@ -132,7 +132,7 @@ export function TestimonialsCarousel() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="subhead-gold mb-3 text-xs tracking-widest uppercase">Testimonials</p>
           <h2 className="font-serif text-3xl text-foreground md:text-4xl">
-            Professionals and business owners love how Susan makes their work easier.
+            Professionals and business owners love how I make their work easier.
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
             Here are a few words from founders, executives, and team leaders.

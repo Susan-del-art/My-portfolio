@@ -4,15 +4,15 @@ import { SiteLayout } from "@/components/site-layout";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Packages — Susan Wakarindi, Executive VA" },
+      { title: "Services & Packages | Susan Wakarindi, Executive VA" },
       {
         name: "description",
         content:
-          "Executive support, operations and SOPs, AI and automation, marketing coordination and back-office support — monthly retainers and focused systems sprints.",
+          "Executive support, operations and SOPs, AI and automation, marketing coordination and back-office support with monthly retainers and focused systems sprints.",
       },
       {
         property: "og:title",
-        content: "Executive VA & Operations Services — Susan Wakarindi",
+        content: "Executive VA & Operations Services | Susan Wakarindi",
       },
       {
         property: "og:description",
@@ -52,7 +52,7 @@ const services = [
   {
     n: "03",
     title: "AI & automation",
-    intro: "Applied where it saves real hours — not for the sake of it.",
+    intro: "Applied where it saves real hours, not for the sake of it.",
     items: [
       "AI-assisted drafting, research and summaries",
       "No-code automations (Zapier, Make)",
@@ -109,7 +109,7 @@ const engagements = [
   {
     name: "Systems sprint",
     shape: "Fixed scope · a few focused weeks",
-    for: "One workflow is broken — onboarding, invoicing, reporting — and you want it documented, simplified and automated.",
+    for: "One workflow is broken (onboarding, invoicing, reporting) and you want it documented, simplified and automated.",
     includes: [
       "Discovery and mapping of the current process",
       "Rebuilt workflow with SOPs and templates",

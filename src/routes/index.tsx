@@ -68,32 +68,27 @@ const signals = [
 function Home() {
   return (
     <SiteLayout>
-      {/* Hero — split, statement-led */}
+      {/* Hero */}
       <section className="grain">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 pb-24 pt-12 md:grid-cols-[1.35fr_1fr] md:grid-rows-[auto_auto] md:items-end md:gap-x-12 md:pt-28">
-          <div className="order-1 border-b-2 border-[var(--gold)] pb-6 md:order-none md:col-start-2 md:row-start-1 md:pb-6">
-            <img
-              src={portrait.url}
-              alt="Susan Wakarindi, Executive Virtual Assistant and Operations Partner"
-              width={800}
-              height={1200}
-              className="aspect-[4/5] w-full rounded-3xl object-cover object-top"
-            />
-          </div>
-
-          <div className="order-2 md:order-none md:col-start-1 md:row-span-2 md:row-start-1">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-12 md:grid-cols-[1.2fr_1fr] md:gap-x-12 md:py-16">
+          <div className="order-2 md:order-1">
             <p className="eyebrow">
               Executive Virtual Assistant · Operations · Marketing · AI Systems
             </p>
-            <h1 className="mt-6 text-3xl leading-[1.08] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-3xl leading-[1.08] sm:text-5xl lg:text-6xl">
               Don't just work harder.
               <br />
               Build better systems.
             </h1>
-            <p className="accent-serif mt-5 text-lg text-[var(--navy)] sm:text-xl">
+            <p className="accent-serif mt-4 text-lg text-[var(--navy)] sm:text-xl">
               Structure creates freedom.
             </p>
-            <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              I'm Susan Wakarindi, an Executive Virtual Assistant and Operations Partner. I help
+              founders, executives and growing businesses move from operational chaos to organised,
+              efficient, scalable ways of working.
+            </p>
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[var(--gold)] hover:text-[var(--navy)]"
@@ -106,26 +101,28 @@ function Home() {
               >
                 See how I work
               </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-semibold text-primary hover:text-[var(--gold)]"
+              >
+                More about me <ArrowRight className="size-4" />
+              </Link>
             </div>
           </div>
 
-          <div className="order-3 md:order-none md:col-start-2 md:row-start-2 md:pb-2">
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I'm Susan Wakarindi — an Executive Virtual Assistant and Operations Partner. I help
-              founders, executives and growing businesses move from operational chaos to organised,
-              efficient, scalable ways of working.
-            </p>
-            <Link
-              to="/about"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-[var(--gold)]"
-            >
-              More about me <ArrowRight className="size-4" />
-            </Link>
+          <div className="order-1 border-b-2 border-[var(--gold)] pb-6 md:order-2">
+            <img
+              src={portrait.url}
+              alt="Susan Wakarindi, Executive Virtual Assistant and Operations Partner"
+              width={800}
+              height={1200}
+              className="aspect-[4/5] w-full rounded-3xl object-cover object-top"
+            />
           </div>
         </div>
       </section>
 
-      {/* Problem framing — list, not cards */}
+      {/* Problem framing */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-12 md:grid-cols-[1fr_1.2fr]">
           <div>
@@ -177,7 +174,7 @@ function Home() {
         <div className="rounded-3xl bg-primary p-10 text-[var(--beige)] md:p-14">
           <p className="eyebrow">Start here</p>
           <p className="accent-serif mt-5 max-w-2xl text-2xl leading-snug text-[var(--beige)] md:text-3xl">
-            Tell me what's slowing your week down. We'll spend thirty minutes on it — no pitch, no
+            Tell me what's slowing your week down. We'll spend thirty minutes on it: no pitch, no
             obligation.
           </p>
           <Link

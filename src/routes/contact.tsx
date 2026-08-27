@@ -6,7 +6,7 @@ import { Clock, Mail, MapPin } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Susan Wakarindi — Book a Discovery Call" },
+      { title: "Contact Susan Wakarindi | Book a Discovery Call" },
       {
         name: "description",
         content:
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/contact")({
 const nextSteps = [
   ["01", "You write", "Send a few lines about the work and where it's getting stuck."],
   ["02", "I reply", "Within one business day, with a couple of call times that suit your zone."],
-  ["03", "We talk", "Thirty minutes, no pitch — we work out whether I'm the right fit."],
+  ["03", "We talk", "Thirty minutes, no pitch: we work out whether I'm the right fit."],
   ["04", "You decide", "A written proposal with scope, hours and rates. No obligation."],
 ];
 
@@ -81,7 +81,7 @@ function Contact() {
             </p>
             <p className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-[var(--gold)]" />
-              Nairobi, Kenya — working with clients worldwide
+              Nairobi, Kenya (working with clients worldwide)
             </p>
             <p className="flex items-start gap-3">
               <Clock className="mt-0.5 size-4 shrink-0 text-[var(--gold)]" />

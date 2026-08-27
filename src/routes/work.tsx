@@ -5,13 +5,13 @@ import working from "@/assets/susan-working.jpg.asset.json";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "How I Work — Process & Deliverables | Susan Wakarindi" },
+      { title: "How I Work | Process & Deliverables | Susan Wakarindi" },
       {
         name: "description",
         content:
-          "The four-step process behind every engagement — discovery, absorb, systemise, hand over — and the concrete deliverables you receive along the way.",
+          "The four-step process behind every engagement (discovery, absorb, systemise, hand over) and the concrete deliverables you receive along the way.",
       },
-      { property: "og:title", content: "How I Work — Susan Wakarindi" },
+      { property: "og:title", content: "How I Work | Susan Wakarindi" },
       {
         property: "og:description",
         content:
@@ -33,7 +33,7 @@ const steps = [
   {
     n: "02",
     title: "Absorb",
-    body: "I take the immediate load first — inbox, calendar, follow-ups, whatever is loudest — while observing how the work really flows. Two weeks of settling in before we change anything structural.",
+    body: "I take the immediate load first (inbox, calendar, follow-ups, whatever is loudest) while observing how the work really flows. Two weeks of settling in before we change anything structural.",
   },
   {
     n: "03",

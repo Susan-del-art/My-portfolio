@@ -7,17 +7,17 @@ import office from "@/assets/susan-office.jpg.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Susan Wakarindi — Executive VA & Operations Partner" },
+      { title: "About Susan Wakarindi | Executive VA & Operations Partner" },
       {
         name: "description",
         content:
-          "Susan Wakarindi's story: from administration into executive support, operations, marketing, AI and automation — helping businesses work with structure, not stress.",
+          "Susan Wakarindi's story: from administration into executive support, operations, marketing, AI and automation, helping businesses work with structure, not stress.",
       },
       { property: "og:title", content: "About Susan Wakarindi" },
       {
         property: "og:description",
         content:
-          "Professional, warm and practical support for founders and executives — built on systems, not heroics.",
+          "Professional, warm and practical support for founders and executives, built on systems, not heroics.",
       },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary" },
@@ -73,14 +73,14 @@ function About() {
       <section className="mx-auto max-w-3xl px-6 py-16">
         <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
           <p>
-            I'm Susan Wakarindi, an Executive Virtual Assistant and Operations Partner working with
-            founders, executives and small businesses. My path has moved with the digital workplace
-            — from administrative and technology skills into executive support, operations,
-            marketing, AI and automation.
+            I'm Susan Wakarindi, an Executive Virtual Assistant and Operations Partner with 2 years
+            of experience working with founders, executives and small businesses. My path has moved
+            with the digital workplace from administrative and technology skills into executive
+            support, operations, marketing, AI and automation.
           </p>
           <p>
             What I've learned along the way is simple: most teams aren't short on effort, they're
-            short on structure. So my work is to absorb the load first, then design it away — the
+            short on structure. So my work is to absorb the load first, then design it away: the
             triage rules, SOPs, trackers and automations that keep the volume down permanently.
           </p>
           <p>
@@ -120,11 +120,9 @@ function About() {
               Training &amp; credentials
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li>Certification, Virtual Assistant — Elvis Warutumo (2025)</li>
-              <li>Diploma, Business Management — KCA University (2023–2024)</li>
-              <li>Certificate, Business Management — KCA University (2022–2023)</li>
-              <li>Certification, Virtual Assistance — Ajira Digital (2023)</li>
-              <li>Certification, Social Media Marketing — HubSpot Academy (2023)</li>
+              <li>Certification in Virtual Assistant</li>
+              <li>Certification in Virtual Assistance</li>
+              <li>Certification in Social Media Marketing</li>
             </ul>
           </div>
           <div>
@@ -139,7 +137,7 @@ function About() {
               Working details
             </h2>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-              <li>Based in Nairobi, Kenya — remote worldwide</li>
+              <li>Based in Nairobi, Kenya (remote worldwide)</li>
               <li>East Africa Time (UTC+3), Mon–Fri</li>
               <li>English &amp; Kiswahili</li>
             </ul>

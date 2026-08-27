@@ -132,7 +132,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             </p>
             <p className="mt-3 max-w-md text-sm text-[var(--beige)]/75">
               Executive support, operations, marketing coordination and AI-powered systems for
-              founders and growing businesses — remote, worldwide (EAT / UTC+3).
+              founders and growing businesses, remote worldwide (EAT / UTC+3).
             </p>
             <p className="accent-serif mt-4 text-[var(--gold)]">
               Work Smarter. Operate Better. Grow Further.
