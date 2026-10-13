@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useState, type FormEvent } from "react";
 import { SiteLayout } from "@/components/site-layout";
 import { Clock, Mail, MapPin } from "lucide-react";
+
+const emptyForm = { name: "", email: "", need: "", message: "" };
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -53,7 +56,65 @@ const faqs = [
 
 function Contact() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", need: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
+  const [form, setForm] = useState(emptyForm);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (sending) return;
+
+    const submission = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      need: form.need.trim(),
+      message: form.message.trim(),
+    };
+
+    if (Object.values(submission).some((value) => !value)) {
+      setError("Please complete every field before sending your message.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submission.email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    const { VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY } =
+      import.meta.env;
+
+    if (!VITE_EMAILJS_SERVICE_ID || !VITE_EMAILJS_TEMPLATE_ID || !VITE_EMAILJS_PUBLIC_KEY) {
+      setError("The contact form is not configured yet. Please email Susan directly instead.");
+      return;
+    }
+
+    setSending(true);
+    setError("");
+
+    try {
+      await emailjs.send(
+        VITE_EMAILJS_SERVICE_ID,
+        VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: submission.name,
+          email: submission.email,
+          subject: `Website enquiry: ${submission.need}`,
+          need: submission.need,
+          message: submission.message,
+        },
+        { publicKey: VITE_EMAILJS_PUBLIC_KEY },
+      );
+      setSubmittedName(submission.name);
+      setForm(emptyForm);
+      setSent(true);
+    } catch {
+      setError("Your message could not be sent. Please try again or email Susan directly.");
+    } finally {
+      setSending(false);
+    }
+  }
 
   const field =
     "mt-2 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:border-[var(--gold)]";
@@ -95,26 +156,33 @@ function Contact() {
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.3fr_1fr]">
         <div className="rounded-3xl border border-border p-8 md:p-10">
           {sent ? (
-            <div>
-              <h2 className="text-2xl">Thank you, {form.name || "friend"}.</h2>
+            <div role="status" aria-live="polite">
+              <h2 className="text-2xl">Thank you, {submittedName || "friend"}.</h2>
               <p className="mt-3 text-sm text-muted-foreground">
-                Your message is with me. I reply to every enquiry within one business day with times
-                for a discovery call.
+                Your message has been submitted. I reply to every enquiry within one business day
+                with times for a discovery call.
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-            >
+            <form onSubmit={handleSubmit} aria-busy={sending}>
               <h2 className="text-2xl">Send a message</h2>
+              {error && (
+                <p className="mt-4 text-sm text-destructive" role="alert">
+                  {error}{" "}
+                  {error.includes("email Susan directly") && (
+                    <a className="underline" href="mailto:susanwakarindi222@gmail.com">
+                      Email Susan
+                    </a>
+                  )}
+                </p>
+              )}
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <label className="block text-sm">
                   Your name
                   <input
                     required
+                    autoComplete="name"
+                    name="name"
                     className={field}
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -125,6 +193,8 @@ function Contact() {
                   <input
                     required
                     type="email"
+                    autoComplete="email"
+                    name="email"
                     className={field}
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -134,6 +204,8 @@ function Contact() {
               <label className="mt-6 block text-sm">
                 What do you need help with?
                 <select
+                  required
+                  name="need"
                   className={field}
                   value={form.need}
                   onChange={(e) => setForm({ ...form, need: e.target.value })}
@@ -150,6 +222,8 @@ function Contact() {
               <label className="mt-6 block text-sm">
                 A little context
                 <textarea
+                  required
+                  name="message"
                   rows={5}
                   className={field}
                   value={form.message}
@@ -158,9 +232,10 @@ function Contact() {
               </label>
               <button
                 type="submit"
-                className="mt-8 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[var(--gold)] hover:text-[var(--navy)]"
+                disabled={sending}
+                className="mt-8 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[var(--gold)] hover:text-[var(--navy)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send message
+                {sending ? "Sending..." : "Send message"}
               </button>
             </form>
           )}
